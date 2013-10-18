@@ -20,8 +20,6 @@ package com.google.appengine.task.appcfg
  *
  * @author Benjamin Muschko
  */
-class DownloadAppConvention {
-    String id
-    String version
+sclass DownloadAppConvention {
     File outputDirectory
 }

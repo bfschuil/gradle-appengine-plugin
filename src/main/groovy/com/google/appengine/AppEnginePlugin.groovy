@@ -187,6 +187,8 @@ class AppEnginePlugin implements Plugin<Project> {
             appengineAppConfigTaskTemplate.conventionMapping.map('httpProxy') { appenginePluginConvention.appCfg.httpProxy }
             appengineAppConfigTaskTemplate.conventionMapping.map('httpsProxy') { appenginePluginConvention.appCfg.httpsProxy }
             appengineAppConfigTaskTemplate.conventionMapping.map('oauth2') { appenginePluginConvention.appCfg.oauth2 }
+            appengineAppConfigTaskTemplate.conventionMapping.map('id') { appenginePluginConvention.appCfg.id }
+            appengineAppConfigTaskTemplate.conventionMapping.map('version') { appenginePluginConvention.appCfg.version }
         }
     }
 
@@ -331,9 +333,9 @@ class AppEnginePlugin implements Plugin<Project> {
         DownloadAppTask appengineDownloadAppTask = project.tasks.create(APPENGINE_DOWNLOAD_APP, DownloadAppTask)
         appengineDownloadAppTask.description = 'Retrieves the most current version of your application.'
         appengineDownloadAppTask.group = APPENGINE_GROUP
-        appengineDownloadAppTask.conventionMapping.map('appId') { appenginePluginConvention.appCfg.app.id }
-        appengineDownloadAppTask.conventionMapping.map('appVersion') { appenginePluginConvention.appCfg.app.version }
-        appengineDownloadAppTask.conventionMapping.map('outputDirectory') { appenginePluginConvention.appCfg.app.outputDirectory ?: downloadedAppDirectory }
+        appengineDownloadAppTask.conventionMapping.map('appId') { appenginePluginConvention.appCfg.id }
+        appengineDownloadAppTask.conventionMapping.map('appVersion') { appenginePluginConvention.appCfg.version }
+        appengineDownloadAppTask.conventionMapping.map('outputDirectory') { appenginePluginConvention.appCfg.download.outputDirectory ?: downloadedAppDirectory }
     }
 
     /**

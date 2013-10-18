@@ -96,6 +96,10 @@ modifyPom {
                 id 'erdi'
                 name 'Marcin Erdmann'
             }
+            developer {
+                id 'bfschuil'
+                name 'Ben Schuiling'
+            }
         }
     }
 }

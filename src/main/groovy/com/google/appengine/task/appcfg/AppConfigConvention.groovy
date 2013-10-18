@@ -30,7 +30,9 @@ class AppConfigConvention {
     String httpProxy
     String httpsProxy
     Boolean oauth2
+    String id
+    String version
     DownloadLogsConvention logs = new DownloadLogsConvention()
-    DownloadAppConvention app = new DownloadAppConvention()
+    DownloadAppConvention download = new DownloadAppConvention()
     UpdateConvention update = new UpdateConvention()
 }
